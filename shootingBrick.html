@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1220" height="600" style="border: 1px solid black"></canvas>
+</body>
+<script>
+  class ChuNhat {
+      x;
+      y;
+      rong;
+      cao
+
+      constructor(x, y, rong, cao) {
+          this.x = x;
+          this.y = y;
+          this.rong = rong;
+          this.cao = cao;
+      }
+
+      setX(x) {
+          this.x = x
+      }
+
+      getX() {
+          return this.x
+      }
+
+      setY(y) {
+          this.y = y
+      }
+
+      getY() {
+          return this.y
+      }
+
+      setRong(rong) {
+          this.rong = rong
+      }
+
+      getRong() {
+          return this.rong
+      }
+
+      setCao(cao) {
+          this.cao = cao
+      }
+
+      getCao(cao) {
+          return this.cao
+      }
+
+      veHinhChuNhat(ctx,x,y) {
+          let chuNhat = new ChuNhat(x, y, 20, 10)
+          ctx.beginPath()
+          ctx.fillRect(chuNhat.x,chuNhat.y,20,10)
+          ctx.closePath()
+      }
+  }
+  let ctx = document.getElementById('myCanvas').getContext('2d')
+  let chuNhat = new ChuNhat()
+  for (let i = 0; i < 400; i+=20) {
+      for (let j = 0; j < 800; j+=40) {
+          chuNhat.veHinhChuNhat(ctx,j,i+10)
+      }
+  }
+
+
+
+
+</script>
+</html>
